@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Registration Page</title>
+<link rel="stylesheet" href="register.css">
+
+</head>
+<body>
+
+<div class="container">
+  <h2>Registration</h2>
+
+  <p>How would you like to register?</p>
+
+  <button onclick="showEmailForm()">User</button>
+  <button onclick="redirectToSocial()">representative</button>
+
+  <div id="emailForm" style="display: none;">
+    <h3>Register with Email</h3>
+    <form class = "form" action="/submit" method="post" size ="50%">
+        <label for="participation_preference">How do you want to participate?</label>
+        <select name="participation_preference" id="participation_preference">
+            <option value="online">Online</option>
+            <option value="offline">Offline</option>
+            <!-- Add more options if needed -->
+        </select>
+        <label for="organization_id">Organization ID:</label>
+        <input type="text" name="organization_id" id="organization_id">
+        <label for="region">Region:</label>
+        <input type="text" name="region" id="region">
+        <label for="city">City:</label>
+        <input type="text" name="city" id="city">
+        <label for="block">Block:</label>
+        <input type="text" name="block" id="block">
+        <label for="mobile_number"> Number:</br><input type="number"></input></label>
+        <input type="text" name="mobile_number" id="mobile_number">
+        <label for="password">Password:</label>
+        <input type="password" name="password" id="password">
+        <button type="submit">Submit</button>
+    </form>
+    
+  </div>
+</div>
+
+<script>
+function showEmailForm() {
+  document.getElementById("emailForm").style.display = "block";
+}
+
+function redirectToSocial() {
+  // Redirect to the social media registration page
+  window.location.href = "/register_social";
+}
+</script>
+
+</body>
+</html>
