@@ -1,0 +1,317 @@
+
+html {
+	font-size:62.5%;
+}
+* {
+	margin: 0;
+	padding: 0;
+}
+ul, li {
+	list-style: none;
+}
+input {
+	border: none;
+}
+body {
+  width: 128rem;
+}.landing-page-Ru9 {
+  box-sizing: border-box;
+  padding: 2rem 0rem 7.8rem 2.4rem;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(250.04deg, #29384d 50.42%, #8e00ff 87.93%);
+}
+.landing-page-Ru9 .auto-group-mzbu-NC7 {
+  margin-bottom: 2.9rem;
+  width: 100%;
+  height: 9.6rem;
+  display: flex;
+  align-items: flex-start;
+  flex-shrink: 0;
+}
+.landing-page-Ru9 .auto-group-mzbu-NC7 .auto-group-mjeo-2R5 {
+  margin-right: 21.7rem;
+  width: 8.3rem;
+  height: 100%;
+  position: relative;
+  flex-shrink: 0;
+}
+.landing-page-Ru9 .auto-group-mzbu-NC7 .auto-group-mjeo-2R5 .rectangle-10-LwZ {
+  width: 8.3rem;
+  height: 8.4rem;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-color: #301063;
+  border-radius: 2rem;
+}
+.landing-page-Ru9 .auto-group-mzbu-NC7 .auto-group-mjeo-2R5 .r-Sjh {
+  width: 7.3rem;
+  height: 9.6rem;
+  position: absolute;
+  left: 1rem;
+  top: 0;
+  font-size: 6rem;
+  font-weight: 400;
+  line-height: 1.6009999593;
+  color: #ffffff;
+  font-family: Hind, 'Source Sans Pro';
+  white-space: nowrap;
+  display: flex;
+  align-items: baseline;
+}
+.landing-page-Ru9 .auto-group-mzbu-NC7 .auto-group-mjeo-2R5 .r-Sjh .r-Sjh-sub-0 {
+  font-size: 6rem;
+  font-weight: 400;
+  line-height: 1.6;
+  color: #ffffff;
+  font-family: Hind, 'Source Sans Pro';
+}
+.landing-page-Ru9 .auto-group-mzbu-NC7 .auto-group-mjeo-2R5 .r-Sjh .r-Sjh-sub-1 {
+  font-size: 6rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #ffffff;
+  font-family: Poppins, 'Source Sans Pro';
+}
+.landing-page-Ru9 .auto-group-mzbu-NC7 .auto-group-n3fv-hSf {
+  margin-bottom: 1.2rem;
+  box-sizing: border-box;
+  padding: 1.8rem 38.3rem 1.8rem 63.1rem;
+  width: 128rem;
+  display: flex;
+  align-items: center;
+  background-color: #4a1d95;
+  border-radius: 3rem;
+  flex-shrink: 0;
+}
+.landing-page-Ru9 .auto-group-mzbu-NC7 .auto-group-n3fv-hSf .register-nj1 {
+  margin-right: 4.4rem;
+  cursor: pointer;
+  font-size: 3.2rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #ffffff;
+  font-family: Poppins, 'Source Sans Pro';
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.landing-page-Ru9 .auto-group-mzbu-NC7 .auto-group-n3fv-hSf .log-in-VNX {
+  font-size: 3.2rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #ffffff;
+  font-family: Poppins, 'Source Sans Pro';
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.landing-page-Ru9 .auto-group-z3eo-AjZ {
+  margin: 0rem 15.2rem 12.9rem 12.9rem;
+  width: calc(100% - 28.1rem);
+  height: 56.5rem;
+  position: relative;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url('../assets/istockphoto-1159730474-612x612-1-bg.png');
+  border-radius: 31.85rem;
+  flex-shrink: 0;
+}
+.landing-page-Ru9 .auto-group-z3eo-AjZ .raaj-H3V {
+  width: 68.2rem;
+  height: 32rem;
+  position: absolute;
+  left: 17.1rem;
+  top: 11.8rem;
+  font-size: 20rem;
+  font-weight: 400;
+  line-height: 1.6;
+  color: #ffffff;
+  font-family: Hind, 'Source Sans Pro';
+  white-space: nowrap;
+  display: flex;
+  align-items: baseline;
+}
+.landing-page-Ru9 .auto-group-z3eo-AjZ .raaj-H3V .raaj-H3V-sub-0 {
+}
+.landing-page-Ru9 .auto-group-z3eo-AjZ .raaj-H3V .raaj-H3V-sub-1 {
+  font-size: 20rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #ffffff;
+  font-family: Poppins, 'Source Sans Pro';
+}
+.landing-page-Ru9 .auto-group-z3eo-AjZ .ek-saath-ek-awaaz-har-nagar-ke-liye-dFm {
+  width: 46.8rem;
+  height: 3.6rem;
+  position: absolute;
+  left: 27.2rem;
+  top: 34.2rem;
+  font-size: 2.4rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #ffffff;
+  font-family: Poppins, 'Source Sans Pro';
+  white-space: nowrap;
+}
+.landing-page-Ru9 .what-raaj-offers-TEo {
+  margin: 0rem 2.4rem 0.7rem 0rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 4.8rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #ffffff;
+  font-family: Poppins, 'Source Sans Pro';
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.landing-page-Ru9 .the-rural-areas-lead-to-isolation-unequal-access-to-resources-and-limited-collaborative-problem-solving-existing-communication-channels-often-fail-to-bridge-this-gap-effectively-hindering-community-development-if-any-person-wants-to-convey-their-problem-or-message-to-the-local-representative-of-their-locality-rwa-president-or-villages-pradhan-mla-they-were-not-able-to-do-that-and-vice-versa-XEf {
+  margin: 0rem 2.3rem 0.8rem 0rem;
+  max-width: 89.1rem;
+  text-align: center;
+  font-size: 2.4rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #ffffff;
+  font-family: Poppins, 'Source Sans Pro';
+  flex-shrink: 0;
+}
+.landing-page-Ru9 .auto-group-luwu-pd5 {
+  margin: 0rem 24.2rem 2.2rem 21.65rem;
+  width: calc(100% - 45.85rem);
+  height: 21.9rem;
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+.landing-page-Ru9 .auto-group-luwu-pd5 .auto-group-ymou-iyM {
+  height: 100%;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+}
+.landing-page-Ru9 .auto-group-luwu-pd5 .auto-group-ymou-iyM .picture1-1-Gjy {
+  margin-bottom: 1.2rem;
+  width: 10.6rem;
+  height: 12.6rem;
+  object-fit: cover;
+  vertical-align: top;
+  flex-shrink: 0;
+}
+.landing-page-Ru9 .auto-group-luwu-pd5 .auto-group-ymou-iyM .makes-things-faster-nCX {
+  max-width: 19.5rem;
+  text-align: center;
+  font-size: 3.2rem;
+  font-weight: 800;
+  line-height: 1.2575;
+  color: #ffffff;
+  font-family: Post No Bills Colombo ExtraBold, 'Source Sans Pro';
+  flex-shrink: 0;
+}
+.landing-page-Ru9 .auto-group-luwu-pd5 .auto-group-r3af-6DD {
+  box-sizing: border-box;
+  padding: 0.4rem 0rem 0rem 11.95rem;
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+  flex-shrink: 0;
+}
+.landing-page-Ru9 .auto-group-luwu-pd5 .auto-group-r3af-6DD .auto-group-qsat-1qy {
+  margin-right: 14.9rem;
+  width: 16.8rem;
+  height: 100%;
+  position: relative;
+  flex-shrink: 0;
+}
+.landing-page-Ru9 .auto-group-luwu-pd5 .auto-group-r3af-6DD .auto-group-qsat-1qy .picture2-wUj {
+  width: 11.6rem;
+  height: 13.6rem;
+  position: absolute;
+  left: 2.7rem;
+  top: 0;
+  object-fit: cover;
+  vertical-align: top;
+}
+.landing-page-Ru9 .auto-group-luwu-pd5 .auto-group-r3af-6DD .auto-group-qsat-1qy .focuses-on-main-issues-GX1 {
+  width: 16.8rem;
+  height: 8.1rem;
+  position: absolute;
+  left: 0;
+  top: 13.4rem;
+  text-align: center;
+  font-size: 3.2rem;
+  font-weight: 800;
+  line-height: 1.2575;
+  color: #ffffff;
+  font-family: Post No Bills Jaffna ExtraBold, 'Source Sans Pro';
+}
+.landing-page-Ru9 .auto-group-luwu-pd5 .auto-group-r3af-6DD .auto-group-nzqb-9Ku {
+  height: 100%;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+}
+.landing-page-Ru9 .auto-group-luwu-pd5 .auto-group-r3af-6DD .auto-group-nzqb-9Ku .picture3-V8s {
+  margin: 0rem 0rem 1.2rem 1.6rem;
+  width: 12rem;
+  height: 12.2rem;
+  object-fit: cover;
+  vertical-align: top;
+  flex-shrink: 0;
+}
+.landing-page-Ru9 .auto-group-luwu-pd5 .auto-group-r3af-6DD .auto-group-nzqb-9Ku .assures-the-progress-D4s {
+  max-width: 16.6rem;
+  text-align: center;
+  font-size: 3.2rem;
+  font-weight: 800;
+  line-height: 1.2575;
+  color: #ffffff;
+  font-family: Post No Bills Colombo ExtraBold, 'Source Sans Pro';
+  flex-shrink: 0;
+}
+.landing-page-Ru9 .auto-group-nc15-KNo {
+  margin: 0rem 19.3rem 0rem 17rem;
+  width: calc(100% - 36.3rem);
+  height: 16.7rem;
+  position: relative;
+  flex-shrink: 0;
+}
+.landing-page-Ru9 .auto-group-nc15-KNo .raajs-impact-the-desi-connect-q6F {
+  width: 68.9rem;
+  height: 6rem;
+  position: absolute;
+  left: 10.05rem;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 4rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #ffffff;
+  font-family: Poppins, 'Source Sans Pro';
+  white-space: nowrap;
+}
+.landing-page-Ru9 .auto-group-nc15-KNo .humraaj-champions-unity-empowerment-and-sustainable-development-leaving-a-lasting-mark-on-diverse-communities-by-scaling-and-using-innovations-g6s {
+  width: 89.3rem;
+  height: 10.8rem;
+  position: absolute;
+  left: 0;
+  top: 5.9rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.4rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #ffffff;
+  font-family: Poppins, 'Source Sans Pro';
+}
