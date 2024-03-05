@@ -1,62 +1,5 @@
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-  }
 
-  .container {
-    background-color: #fff;
-    border-radius: 8px;
-    padding: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    text-align: center;
-  }
-
-  h2 {
-    margin-top: 0;
-  }
-
-  button {
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    padding: 10px 20px;
-    margin: 10px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-
-  button:hover {
-    background-color: #0056b3;
-  }
-
-  form {
-    margin-top: 20px;
-  }
-
-  label {
-    display: block;
-    margin-bottom: 5px;
-    text-align: left;
-  }
-
-  input[type="email"],
-  input[type="password"],
-  input[type="submit"] {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-    border-radius: 4px;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
-  }
-  .form {
+.form {
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -186,3 +129,46 @@ body {
       opacity: 0;
     }
   }
+
+  .option {
+    border: none;
+    display: flex;
+    padding: 0.75rem 1.5rem;
+    background-color: #488aec;
+    color: #ffffff;
+    font-size: 0.75rem;
+    line-height: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    text-align: center;
+    text-transform: uppercase;
+    vertical-align: middle;
+    align-items: center;
+    border-radius: 0.5rem;
+    user-select: none;
+    gap: 0.75rem;
+    box-shadow: 0 4px 6px -1px #488aec31, 0 2px 4px -1px #488aec17;
+    transition: all 0.6s ease;
+  }
+  
+  .option:hover {
+    box-shadow: 0 10px 15px -3px #488aec4f, 0 4px 6px -2px #488aec17;
+  }
+  
+  .option:focus,
+  .option:active {
+    opacity: 0.85;
+    box-shadow: none;
+  }
+  
+  button svg {
+    width: 1.25rem;
+    height: 1.25rem;
+  }
+
+.choices{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    justify-content: space-evenly;
+}
