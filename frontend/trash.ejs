@@ -1,0 +1,22 @@
+<!-- views/form.ejs -->
+<form action="/trash1" method="post">
+    <label for="participation_preference">How do you want to participate?</label>
+    <select name="participation_preference" id="participation_preference">
+        <option value="online">Online</option>
+        <option value="offline">Offline</option>
+        <!-- Add more options if needed -->
+    </select>
+    <label for="organization_id">Organization ID:</label>
+    <input type="text" name="organization_id" id="organization_id">
+    <label for="region">Region:</label>
+    <input type="text" name="region" id="region">
+    <label for="city">City:</label>
+    <input type="text" name="city" id="city">
+    <label for="block">Block:</label>
+    <input type="text" name="block" id="block">
+    <label for="mobile_number">Mobile Number:</label>
+    <input type="text" name="mobile_number" id="mobile_number">
+    <label for="password">Password:</label>
+    <input type="password" name="password" id="password">
+    <button type="submit">Submit</button>
+</form>
