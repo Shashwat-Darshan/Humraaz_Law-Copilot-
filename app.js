@@ -12,6 +12,7 @@ const usersCollection = client.db().collection('users');
 const complaint = client.db().collection('complaints');
 const poll = client.db().collection('poll');
 // Connect to MongoDB
+app.use(express.static(path.join(__dirname, 'frontend')));
 async function connectToMongoDB() {
     try {
         await client.connect();
@@ -211,7 +212,15 @@ app.post('/create_poll', async (req, res) => {
     }
 });
 
-// Your routes and other middleware configurations...
+app.get('/show_polls', async (req, res) => {
+    try {
+        const complaints  = await poll.find().toArray();
+        res.render(path.join(__dirname, 'frontend', 'complaint-status'), { complaints  });
+    } catch (error) {
+        console.error('Error retrieving polls:', error);
+        res.status(500).send('Error retrieving polls.');
+    }
+});
 
 // Start the server
 const PORT = process.env.PORT || 3000;
