@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complaints and Status</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #301063;
+            color: #fff;
+            text-align: center;
+            padding: 1rem 0;
+        }
+
+        h1 {
+            margin: 0;
+        }
+
+        main {
+            padding: 2rem;
+        }
+
+        .complaints {
+            display: grid;
+            
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1rem;
+        }
+
+        .complaint {
+            background-color: #f4f4f4;
+            padding: 1rem;
+            border-radius: 5px;
+        }
+
+        footer {
+            background-color: #301063;
+            color: #fff;
+            text-align: center;
+            padding: 1rem 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .status {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 1rem;
+        }
+
+        .status p {
+            margin: 0;
+        }
+    </style>
+</head>
+<body style="background: linear-gradient(250.04deg, #29384d 50.42%, #8e00ff 87.93%);">
+    <header>
+        <h1>Complaints and Status</h1>
+    </header>
+    <main>
+        <section class="complaints">
+            <article class="complaint">
+                <h2>Complaint #1</h2>
+                <p>Date: January 1, 2024</p>
+                <p>Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et justo libero.</p>
+                <div class="status">
+                    <button>Resolved</button>
+                </div>
+            </article>
+            <article class="complaint">
+                <h2>Complaint #2</h2>
+                <p>Date: January 5, 2024</p>
+                <p>Description: Nulla lacinia malesuada est sit amet facilisis. Integer mollis lorem id justo malesuada, at volutpat velit ultricies.</p>
+                <div class="status">
+                    <button>Resolved</button>
+                </div>
+            </article>
+            <!-- Add more complaint articles as needed -->
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 All rights reserved</p>
+    </footer>
+</body>
+</html>

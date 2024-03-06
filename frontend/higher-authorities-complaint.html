@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Griverances to Higher Authorities</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(250.04deg, #29384d 50.42%, #8e00ff 87.93%);
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 500px;
+      margin: 50px auto;
+      background-color: #4a1d95;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    h2 {
+      text-align: center;
+    }
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+    input[type="text"],
+    textarea {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+    input[type="submit"] {
+      background-color: #301063;
+      color: white;
+      padding: 20px 30px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      float: right;
+    }
+    input[type="Submit"]:hover {
+      background-color: #3a2261;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h2 style="color: #ffffff;">Submit a Complaint</h2>
+    <form action="#">
+      <label for="fullname" style="color: #ffffff;">Full Name</label>
+      <input type="text" id="fullname" name="fullname" required>
+
+      <label for="email" style="color: #ffffff;">Email</label>
+      <input type="text" id="email" name="email" required>
+
+      <label for="subject" style="color: #ffffff;">Subject</label>
+      <input type="text" id="subject" name="subject" required>
+
+      <label for="message" style="color: #ffffff;">Message</label>
+      <textarea id="message" name="message" rows="5" required></textarea>
+
+      <input type="submit" value="Submit">
+    </form>
+  </div>
+
+</body>
+</html>
