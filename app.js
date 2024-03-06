@@ -44,6 +44,8 @@ app.get('/register', (req, res) => {
 app.post('/register_submit1', async (req, res) => {
     try {
         const userData = {
+            role:"req",
+            firstName: req.body.organisation_id,
             firstName: req.body.first_name,
             lastName: req.body.last_name,
             religion: req.body.Religion,
@@ -52,10 +54,10 @@ app.post('/register_submit1', async (req, res) => {
             password: req.body.password
         };
 
-        const usersCollection = client.db().collection(' m representative');
+        const usersCollection = client.db().collection('representative');
         const All_user = client.db().collection('All_user');
-        const result = await usersCollection.insertOne(userData);
         const user = await All_user.insertOne(userData);
+        const result = await usersCollection.insertOne(userData);
         console.log(`User data stored successfully with ID: ${result.insertedId}`);
         
         res.send('Form submitted and saved to database successfully!');
@@ -69,8 +71,8 @@ app.post('/register_submit1', async (req, res) => {
 app.post('/register_submit2', async (req, res) => {
     try {
         const userData = {
+            role:"user",
             firstName: req.body.first_name,
-            firstName: req.body.organisation_id,
             lastName: req.body.last_name,
             religion: req.body.Religion,
             city: req.body.city,
@@ -80,8 +82,10 @@ app.post('/register_submit2', async (req, res) => {
 
         const usersCollection = client.db().collection('users');
         const result = await usersCollection.insertOne(userData);
+        const All_user = client.db().collection('All_user');
+        const user = await All_user.insertOne(userData);
         console.log(`User data stored successfully with ID: ${result.insertedId}`);
-        
+        show(result.insertedId);
         res.send('Form submitted and saved to database successfully!');
     } catch (error) {
         console.error("Error storing user data:", error);
@@ -89,7 +93,9 @@ app.post('/register_submit2', async (req, res) => {
     }
 });
 
-
+app.get('/login_check',(req,res)=>{
+    
+});
 
 
 // Your routes and other middleware configurations...
