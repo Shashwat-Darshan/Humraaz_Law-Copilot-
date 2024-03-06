@@ -114,8 +114,11 @@ app.get('/login_submit', async (req, res) => {
             if (user) {
                 // User found, do something with the user data
                 console.log(user);
-                MainUser=user._id;
+                if(user.role=='req')
                 res.render(path.join(__dirname, 'frontend', 'option-user'));// Send the user data as a JSON response
+                else{
+                res.render(path.join(__dirname, 'frontend', 'option-representatives'));
+            }
             } else {
                 // User not found
                 console.log('User not found');
