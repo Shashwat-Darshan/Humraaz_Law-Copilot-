@@ -14,7 +14,7 @@ input {
 }
 body {
   width: 128rem;
-}.landing-page-Ru9 {
+}.landing-page {
   box-sizing: border-box;
   padding: 2rem 0rem 7.8rem 2.4rem;
   width: 100%;
@@ -25,7 +25,7 @@ body {
   flex-direction: column;
   background: linear-gradient(250.04deg, #29384d 50.42%, #8e00ff 87.93%);
 }
-.landing-page-Ru9 .auto-group-mzbu-NC7 {
+.landing-page .navbar {
   margin-bottom: 2.9rem;
   width: 100%;
   height: 9.6rem;
@@ -33,14 +33,14 @@ body {
   align-items: flex-start;
   flex-shrink: 0;
 }
-.landing-page-Ru9 .auto-group-mzbu-NC7 .auto-group-mjeo-2R5 {
+.landing-page .navbar .logo {
   margin-right: 21.7rem;
   width: 8.3rem;
   height: 100%;
   position: relative;
   flex-shrink: 0;
 }
-.landing-page-Ru9 .auto-group-mzbu-NC7 .auto-group-mjeo-2R5 .rectangle-10-LwZ {
+.landing-page .navbar .logo .logo-frame {
   width: 8.3rem;
   height: 8.4rem;
   position: absolute;
@@ -49,7 +49,7 @@ body {
   background-color: #301063;
   border-radius: 2rem;
 }
-.landing-page-Ru9 .auto-group-mzbu-NC7 .auto-group-mjeo-2R5 .r-Sjh {
+.landing-page .navbar .logo .logo-txt {
   width: 7.3rem;
   height: 9.6rem;
   position: absolute;
@@ -64,21 +64,21 @@ body {
   display: flex;
   align-items: baseline;
 }
-.landing-page-Ru9 .auto-group-mzbu-NC7 .auto-group-mjeo-2R5 .r-Sjh .r-Sjh-sub-0 {
+.landing-page .navbar .logo .logo-txt .l-txt1 {
   font-size: 6rem;
   font-weight: 400;
   line-height: 1.6;
   color: #ffffff;
   font-family: Hind, 'Source Sans Pro';
 }
-.landing-page-Ru9 .auto-group-mzbu-NC7 .auto-group-mjeo-2R5 .r-Sjh .r-Sjh-sub-1 {
+.landing-page .navbar .logo .logo-txt .l-txt2 {
   font-size: 6rem;
   font-weight: 400;
   line-height: 1.5;
   color: #ffffff;
   font-family: Poppins, 'Source Sans Pro';
 }
-.landing-page-Ru9 .auto-group-mzbu-NC7 .auto-group-n3fv-hSf {
+.landing-page .navbar .sidebar {
   margin-bottom: 1.2rem;
   box-sizing: border-box;
   padding: 1.8rem 38.3rem 1.8rem 63.1rem;
@@ -89,7 +89,7 @@ body {
   border-radius: 3rem;
   flex-shrink: 0;
 }
-.landing-page-Ru9 .auto-group-mzbu-NC7 .auto-group-n3fv-hSf .register-nj1 {
+.landing-page .navbar .sidebar .register-txt {
   margin-right: 4.4rem;
   cursor: pointer;
   font-size: 3.2rem;
@@ -100,7 +100,7 @@ body {
   white-space: nowrap;
   flex-shrink: 0;
 }
-.landing-page-Ru9 .auto-group-mzbu-NC7 .auto-group-n3fv-hSf .log-in-VNX {
+.landing-page .navbar .sidebar .log-in {
   font-size: 3.2rem;
   font-weight: 400;
   line-height: 1.5;
@@ -109,7 +109,7 @@ body {
   white-space: nowrap;
   flex-shrink: 0;
 }
-.landing-page-Ru9 .auto-group-z3eo-AjZ {
+.landing-page .hero-section {
   margin: 0rem 15.2rem 12.9rem 12.9rem;
   width: calc(100% - 28.1rem);
   height: 56.5rem;
@@ -121,7 +121,7 @@ body {
   border-radius: 31.85rem;
   flex-shrink: 0;
 }
-.landing-page-Ru9 .auto-group-z3eo-AjZ .raaj-H3V {
+.landing-page .hero-section .main-txt {
   width: 68.2rem;
   height: 32rem;
   position: absolute;
@@ -136,16 +136,16 @@ body {
   display: flex;
   align-items: baseline;
 }
-.landing-page-Ru9 .auto-group-z3eo-AjZ .raaj-H3V .raaj-H3V-sub-0 {
+.landing-page .hero-section .main-txt .main-txt-1 {
 }
-.landing-page-Ru9 .auto-group-z3eo-AjZ .raaj-H3V .raaj-H3V-sub-1 {
+.landing-page .hero-section .main-txt .main-txt-2 {
   font-size: 20rem;
   font-weight: 400;
   line-height: 1.5;
   color: #ffffff;
   font-family: Poppins, 'Source Sans Pro';
 }
-.landing-page-Ru9 .auto-group-z3eo-AjZ .ek-saath-ek-awaaz-har-nagar-ke-liye-dFm {
+.landing-page .hero-section .tagline {
   width: 46.8rem;
   height: 3.6rem;
   position: absolute;
@@ -158,7 +158,7 @@ body {
   font-family: Poppins, 'Source Sans Pro';
   white-space: nowrap;
 }
-.landing-page-Ru9 .what-raaj-offers-TEo {
+.landing-page .offers {
   margin: 0rem 2.4rem 0.7rem 0rem;
   display: flex;
   align-items: center;
@@ -171,7 +171,7 @@ body {
   white-space: nowrap;
   flex-shrink: 0;
 }
-.landing-page-Ru9 .the-rural-areas-lead-to-isolation-unequal-access-to-resources-and-limited-collaborative-problem-solving-existing-communication-channels-often-fail-to-bridge-this-gap-effectively-hindering-community-development-if-any-person-wants-to-convey-their-problem-or-message-to-the-local-representative-of-their-locality-rwa-president-or-villages-pradhan-mla-they-were-not-able-to-do-that-and-vice-versa-XEf {
+.landing-page .offers-detail {
   margin: 0rem 2.3rem 0.8rem 0rem;
   max-width: 89.1rem;
   text-align: center;
@@ -182,7 +182,7 @@ body {
   font-family: Poppins, 'Source Sans Pro';
   flex-shrink: 0;
 }
-.landing-page-Ru9 .auto-group-luwu-pd5 {
+.landing-page .pictures {
   margin: 0rem 24.2rem 2.2rem 21.65rem;
   width: calc(100% - 45.85rem);
   height: 21.9rem;
@@ -190,14 +190,14 @@ body {
   align-items: center;
   flex-shrink: 0;
 }
-.landing-page-Ru9 .auto-group-luwu-pd5 .auto-group-ymou-iyM {
+.landing-page .pictures .p-elem-1 {
   height: 100%;
   align-items: center;
   display: flex;
   flex-direction: column;
   flex-shrink: 0;
 }
-.landing-page-Ru9 .auto-group-luwu-pd5 .auto-group-ymou-iyM .picture1-1-Gjy {
+.landing-page .pictures .p-elem-1 .clock-img {
   margin-bottom: 1.2rem;
   width: 10.6rem;
   height: 12.6rem;
@@ -205,7 +205,7 @@ body {
   vertical-align: top;
   flex-shrink: 0;
 }
-.landing-page-Ru9 .auto-group-luwu-pd5 .auto-group-ymou-iyM .makes-things-faster-nCX {
+.landing-page .pictures .p-elem-1 .p-elem-txt-1 {
   max-width: 19.5rem;
   text-align: center;
   font-size: 3.2rem;
@@ -215,7 +215,7 @@ body {
   font-family: Post No Bills Colombo ExtraBold, 'Source Sans Pro';
   flex-shrink: 0;
 }
-.landing-page-Ru9 .auto-group-luwu-pd5 .auto-group-r3af-6DD {
+.landing-page .pictures .p-elem-2-3 {
   box-sizing: border-box;
   padding: 0.4rem 0rem 0rem 11.95rem;
   height: 100%;
@@ -223,14 +223,14 @@ body {
   align-items: flex-end;
   flex-shrink: 0;
 }
-.landing-page-Ru9 .auto-group-luwu-pd5 .auto-group-r3af-6DD .auto-group-qsat-1qy {
+.landing-page .pictures .p-elem-2-3 .p-elem-2 {
   margin-right: 14.9rem;
   width: 16.8rem;
   height: 100%;
   position: relative;
   flex-shrink: 0;
 }
-.landing-page-Ru9 .auto-group-luwu-pd5 .auto-group-r3af-6DD .auto-group-qsat-1qy .picture2-wUj {
+.landing-page .pictures .p-elem-2-3 .p-elem-2 .target-img {
   width: 11.6rem;
   height: 13.6rem;
   position: absolute;
@@ -239,7 +239,7 @@ body {
   object-fit: cover;
   vertical-align: top;
 }
-.landing-page-Ru9 .auto-group-luwu-pd5 .auto-group-r3af-6DD .auto-group-qsat-1qy .focuses-on-main-issues-GX1 {
+.landing-page .pictures .p-elem-2-3 .p-elem-2 .p-elem-txt-2 {
   width: 16.8rem;
   height: 8.1rem;
   position: absolute;
@@ -252,14 +252,14 @@ body {
   color: #ffffff;
   font-family: Post No Bills Jaffna ExtraBold, 'Source Sans Pro';
 }
-.landing-page-Ru9 .auto-group-luwu-pd5 .auto-group-r3af-6DD .auto-group-nzqb-9Ku {
+.landing-page .pictures .p-elem-2-3 .p-elem-3 {
   height: 100%;
   align-items: center;
   display: flex;
   flex-direction: column;
   flex-shrink: 0;
 }
-.landing-page-Ru9 .auto-group-luwu-pd5 .auto-group-r3af-6DD .auto-group-nzqb-9Ku .picture3-V8s {
+.landing-page .pictures .p-elem-2-3 .p-elem-3 .doc-img {
   margin: 0rem 0rem 1.2rem 1.6rem;
   width: 12rem;
   height: 12.2rem;
@@ -267,7 +267,7 @@ body {
   vertical-align: top;
   flex-shrink: 0;
 }
-.landing-page-Ru9 .auto-group-luwu-pd5 .auto-group-r3af-6DD .auto-group-nzqb-9Ku .assures-the-progress-D4s {
+.landing-page .pictures .p-elem-2-3 .p-elem-3 .p-elem-3-txt {
   max-width: 16.6rem;
   text-align: center;
   font-size: 3.2rem;
@@ -277,14 +277,14 @@ body {
   font-family: Post No Bills Colombo ExtraBold, 'Source Sans Pro';
   flex-shrink: 0;
 }
-.landing-page-Ru9 .auto-group-nc15-KNo {
+.landing-page .footer {
   margin: 0rem 19.3rem 0rem 17rem;
   width: calc(100% - 36.3rem);
   height: 16.7rem;
   position: relative;
   flex-shrink: 0;
 }
-.landing-page-Ru9 .auto-group-nc15-KNo .raajs-impact-the-desi-connect-q6F {
+.landing-page .footer .footer-heading {
   width: 68.9rem;
   height: 6rem;
   position: absolute;
@@ -300,7 +300,7 @@ body {
   font-family: Poppins, 'Source Sans Pro';
   white-space: nowrap;
 }
-.landing-page-Ru9 .auto-group-nc15-KNo .humraaj-champions-unity-empowerment-and-sustainable-development-leaving-a-lasting-mark-on-diverse-communities-by-scaling-and-using-innovations-g6s {
+.landing-page .footer .footer-desc {
   width: 89.3rem;
   height: 10.8rem;
   position: absolute;
