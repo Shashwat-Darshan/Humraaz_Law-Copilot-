@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Show Polls</title>
+</head>
+<body>
+    <h1>Saved Polls</h1>
+    <% if (polls.length > 0) { %>
+        <ul>
+            <% polls.forEach((poll, index) => { %>
+                <li>
+                    <h2>Poll <%= index + 1 %></h2>
+                    <p>Poll Name: <%= poll.name %></p>
+                    <p>Poll Options:</p>
+                    <ul>
+                        <% poll.options.forEach((option) => { %>
+                            <li><%= option %></li>
+                        <% }); %>
+                    </ul>
+                </li>
+            <% }); %>
+        </ul>
+    <% } else { %>
+        <p>No polls available.</p>
+    <% } %>
+</body>
+</html>

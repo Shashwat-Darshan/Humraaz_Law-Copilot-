@@ -12,6 +12,7 @@ const usersCollection = client.db().collection('users');
 const complaint = client.db().collection('complaints');
 const poll = client.db().collection('poll');
 // Connect to MongoDB
+app.use(express.static(path.join(__dirname, 'frontend')));
 async function connectToMongoDB() {
     try {
         await client.connect();
@@ -113,8 +114,11 @@ app.get('/login_submit', async (req, res) => {
             if (user) {
                 // User found, do something with the user data
                 console.log(user);
-                MainUser=user._id;
+                if(user.role=='req')
                 res.render(path.join(__dirname, 'frontend', 'option-user'));// Send the user data as a JSON response
+                else{
+                res.render(path.join(__dirname, 'frontend', 'option-representatives'));
+            }
             } else {
                 // User not found
                 console.log('User not found');
@@ -211,7 +215,15 @@ app.post('/create_poll', async (req, res) => {
     }
 });
 
-// Your routes and other middleware configurations...
+app.get('/show_polls', async (req, res) => {
+    try {
+        const complaints  = await poll.find().toArray();
+        res.render(path.join(__dirname, 'frontend', 'complaint-status'), { complaints  });
+    } catch (error) {
+        console.error('Error retrieving polls:', error);
+        res.status(500).send('Error retrieving polls.');
+    }
+});
 
 // Start the server
 const PORT = process.env.PORT || 3000;
