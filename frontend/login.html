@@ -12,8 +12,8 @@
 <div class="container">
   <h2>Login</h2>
 
- <div class="choices">
-  <button class="option" onclick="showEmailForm()">Login Now</button>
+ <div class="choices hide">
+  <button class="option hide" id="myButton" onclick="showEmailForm()">Login Now</button>
 </div>
   <div id="UserForm" style="display: none;">
     <form class = "form" action="/register_submit" method="post" size ="100%">
@@ -47,10 +47,10 @@
 
     function showEmailForm() {
     bu();
+    var button = document.getElementById("myButton");
+    button.style.display = "none";
     document.getElementById("UserForm").style.display = "block";
-    document.getElementById("RepresentativeForm").style.display = "none";
-
-  return
+    return
 }
 </script>
 
@@ -80,7 +80,9 @@
     align-items: center;
     padding-left: 30px;
   }
-  
+  .hide{
+    display: none;
+  }
   .title::before,.title::after {
     position: absolute;
     content: "";
