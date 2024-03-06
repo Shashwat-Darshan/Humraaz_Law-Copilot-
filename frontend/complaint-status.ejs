@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complaints and Status</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1rem 0;
+        }
+
+        h1 {
+            margin: 0;
+        }
+
+        main {
+            padding: 2rem;
+        }
+
+        .complaints {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1rem;
+        }
+
+        .complaint {
+            background-color: #f4f4f4;
+            padding: 1rem;
+            border-radius: 5px;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1rem 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .status {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 1rem;
+        }
+
+        .status p {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Complaints and Status</h1>
+    </header>
+    <main>
+        <section class="complaints">
+            <% complaints.forEach((complaint, index) => { %>
+                <article class="complaint">
+                    <h2><%= complaint.subject %> - Complaint #<%= index + 1 %></h2>
+                    <div class="status">
+                        <p>Status: <%= complaint.resolved ? 'Resolved' : 'In Progress' %></p>
+                        <% if (complaint.resolved) { %>
+                            <p>Resolved : <%= complaint.resolved %></p>
+                        <% } else { %>
+                            <p>Assigned By: <%= complaint.fullname %></p>
+                            <% } %>
+                            <p>subject: <%= complaint.subject %></p>
+                    </div>
+                </article>
+            <% }); %>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 All rights reserved</p>
+    </footer>
+</body>
+</html>

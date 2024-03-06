@@ -9,6 +9,8 @@ const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology:
 const All_user = client.db().collection('All_user');
 const reprentative = client.db().collection('representative');
 const usersCollection = client.db().collection('users');
+const complaint = client.db().collection('complaints');
+const poll = client.db().collection('poll');
 // Connect to MongoDB
 async function connectToMongoDB() {
     try {
@@ -18,6 +20,7 @@ async function connectToMongoDB() {
         console.error("Error connecting to MongoDB:", error);
     }
 }
+
 let user;
 // Call the function to connect to MongoDB
 connectToMongoDB();
@@ -100,8 +103,7 @@ app.get('/login_submit', async (req, res) => {
         // Retrieve all documents from the "All_user" collection
         const allUsers = await All_user.find({}).toArray();
         console.log(allUsers);
-        console.log(req.body.phone);
-        console.log(req.body.password);
+
         // Check if any users were found
         if (allUsers.length > 0) {
             // Iterate over the array of user documents to find the user with the given phone number and password
@@ -112,7 +114,7 @@ app.get('/login_submit', async (req, res) => {
                 // User found, do something with the user data
                 console.log(user);
                 MainUser=user._id;
-                res.json(user); // Send the user data as a JSON response
+                res.render(path.join(__dirname, 'frontend', 'option-user'));// Send the user data as a JSON response
             } else {
                 // User not found
                 console.log('User not found');
@@ -128,10 +130,86 @@ app.get('/login_submit', async (req, res) => {
         res.status(500).send('Error retrieving all users');
     }
 });
+app.get('/community_chat', (req, res) => {
+    res.sendFile(path.join(__dirname, 'path_to_your_community_chat_html_file'));
+});
 
 
+app.post('/submit_contact_form', async (req, res) => {
+    try {
+        // Extract data from the request body
+        const { fullname, email, subject, message } = req.body;
+
+        // Create an object with the form data
+        const complaintData = {
+            fullname,
+            email,
+            subject,
+            message,
+            resolved: false // Add the resolved key with value false
+        };
+        console.log(complaintData);
+        // Insert the complaint data into the 'complaints' collection
+        const result = await complaint.insertOne(complaintData);
+        res.render(path.join(__dirname, 'frontend', 'successfully-submitted'));
+        // Check if insertion was successful
+        if (result.insertedCount == 1) {
+            console.log('Complaint submitted successfully:', result.insertedId);
+            res.render(path.join(__dirname, 'frontend', 'successfully-submitted'));
+        } else {
+            console.error('Error submitting complaint');
+            res.status(500).send('Error submitting complaint');
+        }
+    } catch (error) {
+        console.error('Error processing form submission:', error);
+        res.status(500).send('Error processing form submission');
+    }
+});
+
+app.get('/jump_option',(req,res)=>{
+    res.render(path.join(__dirname, 'frontend', 'option-user'));
+})
 
 
+app.get('/complaint_history', async (req, res) => {
+    try {
+        // Retrieve complaints data from the database
+        const complaints = await complaint.find().toArray();
+        console.log(complaints);
+        // Render the EJS template with the complaints data
+        res.render(path.join(__dirname, 'frontend', 'complaint-status'), { complaints: complaints });
+    } catch (error) {
+        console.error('Error retrieving complaints:', error);
+        res.status(500).send('Error retrieving complaints');
+    }
+});
+
+app.get('/create_poll', (req, res) => {
+    res.sendFile(__dirname + '/create_polls.html');
+});
+
+app.post('/create_poll', async (req, res) => {
+    const pollName = req.body.pollName;
+    const pollOptions = req.body.optionInput;
+    
+    if (!pollName || !pollOptions || pollOptions.length < 2) {
+        res.status(400).send('Please enter a valid poll name and at least two options.');
+        return;
+    }
+    
+    try {
+        const newPoll = new Poll({
+            name: pollName,
+            options: pollOptions
+        });
+        const result = await complaint.insertOne(newPoll);
+        res.status(201).send('Poll created successfully!');
+        res.redirect("/jump_option");
+    } catch (error) {
+        console.error('Error saving poll:', error);
+        res.status(500).send('Error creating poll.');
+    }
+});
 
 // Your routes and other middleware configurations...
 

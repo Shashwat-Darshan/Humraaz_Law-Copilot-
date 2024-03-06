@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create New Poll</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f7f7f7;
+      margin: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    #newPollContainer {
+      background-color: #ffffff;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      width: 80%;
+      max-width: 600px;
+      box-sizing: border-box;
+    }
+
+    h2 {
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      color: #555;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      box-sizing: border-box;
+      font-size: 14px;
+    }
+
+    .pollOption {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 15px;
+    }
+
+    .optionInput {
+      width: 75%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      box-sizing: border-box;
+      font-size: 14px;
+    }
+
+    #addOptionBtn {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      border: none;
+      border-radius: 5px;
+      margin-top: 15px;
+      transition: background-color 0.3s ease;
+    }
+
+    #addOptionBtn:hover {
+      background-color: #45a049;
+    }
+
+    #submitBtn {
+      background-color: #2196F3;
+      color: white;
+      padding: 12px 25px;
+      font-size: 16px;
+      cursor: pointer;
+      border: none;
+      border-radius: 5px;
+      margin-top: 20px;
+      transition: background-color 0.3s ease;
+    }
+
+    #submitBtn:hover {
+      background-color: #0b7dda;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="newPollContainer">
+    <h2>Create New Poll</h2>
+
+    <label for="pollName">Poll Name:</label>
+    <input type="text" id="pollName" placeholder="Enter poll name" required>
+
+    <div id="pollOptions">
+      <div class="pollOption">
+        <input type="text" class="optionInput" placeholder="Enter option" required>
+        <button class="removeOptionBtn" onclick="removeOption(this)">Remove</button>
+      </div>
+    </div>
+
+    <button id="addOptionBtn" onclick="addOption()">Add Option</button>
+
+    <button id="submitBtn" onclick="submitNewPoll()">Create Poll</button>
+  </div>
+
+  <script>
+    function addOption() {
+      var pollOptionsContainer = document.getElementById('pollOptions');
+
+      var newOptionDiv = document.createElement('div');
+      newOptionDiv.className = 'pollOption';
+
+      var newOptionInput = document.createElement('input');
+      newOptionInput.type = 'text';
+      newOptionInput.className = 'optionInput';
+      newOptionInput.placeholder = 'Enter option';
+      newOptionInput.required = true;
+
+      var removeOptionBtn = document.createElement('button');
+      removeOptionBtn.className = 'removeOptionBtn';
+      removeOptionBtn.textContent = 'Remove';
+      removeOptionBtn.addEventListener('click', function() {
+        removeOption(this);
+      });
+
+      newOptionDiv.appendChild(newOptionInput);
+      newOptionDiv.appendChild(removeOptionBtn);
+      pollOptionsContainer.appendChild(newOptionDiv);
+    }
+
+    function removeOption(btn) {
+      var pollOptionsContainer = document.getElementById('pollOptions');
+      var optionDiv = btn.parentNode;
+      pollOptionsContainer.removeChild(optionDiv);
+    }
+
+    function submitNewPoll() {
+      var pollName = document.getElementById('pollName').value;
+      var optionInputs = document.getElementsByClassName('optionInput');
+
+      if (pollName.trim() === '') {
+        alert('Please enter a poll name.');
+        return;
+      }
+
+      if (optionInputs.length < 2) {
+        alert('Please add at least two options to the poll.');
+        return;
+      }
+
+      var pollOptions = Array.from(optionInputs).map(input => input.value);
+
+      // Here you can handle the creation of the new poll
+      alert('Poll Name: ' + pollName + '\nPoll Options: ' + pollOptions.join(', '));
+      // Additional logic to save the poll to a database or perform other actions can be added here.
+    }
+  </script>
+
+</body>
+</html>

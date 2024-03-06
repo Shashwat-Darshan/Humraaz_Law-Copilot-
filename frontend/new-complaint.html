@@ -54,21 +54,22 @@
 
   <div class="container">
     <h2>Submit a Complaint</h2>
-    <form action="#">
+    <form action="/submit_contact_form" method="POST">
       <label for="fullname">Full Name</label>
       <input type="text" id="fullname" name="fullname" required>
-
+  
       <label for="email">Email</label>
       <input type="text" id="email" name="email" required>
-
+  
       <label for="subject">Subject</label>
       <input type="text" id="subject" name="subject" required>
-
+  
       <label for="message">Message</label>
       <textarea id="message" name="message" rows="5" required></textarea>
-
+  
       <input type="submit" value="Submit">
-    </form>
+  </form>
+  
   </div>
 
 </body>
