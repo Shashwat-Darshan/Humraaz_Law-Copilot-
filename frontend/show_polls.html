@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Polls</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f0f0f0;
+    }
+
+    .poll-container {
+      background-color: #ffffff;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      max-width: 600px;
+      width: 100%;
+    }
+
+    .poll {
+      margin-bottom: 20px;
+    }
+
+    .poll-title {
+      font-size: 20px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .poll-options {
+      list-style: none;
+      padding: 0;
+    }
+
+    .poll-option {
+      margin-bottom: 10px;
+    }
+
+    .poll-option input[type="radio"] {
+      margin-right: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="poll-container">
+    <% polls.forEach((poll, index) => { %>
+      <div class="poll">
+        <div class="poll-title">Poll <%= index + 1 %>: <%= poll.aim %></div>
+        <ul class="poll-options">
+          <li class="poll-option">
+            <input type="radio" id="option1_<%= index %>" name="option_<%= index %>" value="<%= poll.option1 %>">
+            <label for="option1_<%= index %>"><%= poll.option1 %></label>
+          </li>
+          <li class="poll-option">
+            <input type="radio" id="option2_<%= index %>" name="option_<%= index %>" value="<%= poll.option2 %>">
+            <label for="option2_<%= index %>"><%= poll.option2 %></label>
+          </li>
+          <li class="poll-option">
+            <input type="radio" id="option3_<%= index %>" name="option_<%= index %>" value="<%= poll.option3 %>">
+            <label for="option3_<%= index %>"><%= poll.option3 %></label>
+          </li>
+        </ul>
+      </div>
+    <% }); %>
+  </div>
+
+</body>
+</html>
