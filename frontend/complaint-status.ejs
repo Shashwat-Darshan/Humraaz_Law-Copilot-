@@ -65,9 +65,10 @@
     </header>
     <main>
         <section class="complaints">
+            
             <% complaints.forEach((complaint, index) => { %>
                 <article class="complaint">
-                    <h2><%= complaint.subject %> - Complaint #<%= index + 1 %></h2>
+                    <h2>Complaint #<%= index + 1 %>  - <%= complaint.subject %> </h2>
                     <div class="status">
                         <p>Status: <%= complaint.resolved ? 'Resolved' : 'In Progress' %></p>
                         <% if (complaint.resolved) { %>
@@ -79,6 +80,8 @@
                     </div>
                 </article>
             <% }); %>
+            
+        </center>
         </section>
     </main>
     <footer>

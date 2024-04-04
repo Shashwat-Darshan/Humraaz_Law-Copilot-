@@ -13,6 +13,7 @@
     }
     .container {
       max-width: 500px;
+      height: 500px;
       margin: 50px auto;
       background-color: #fff;
       padding: 20px;
@@ -54,13 +55,13 @@
 
   <div class="container">
     <h2>Submit a Complaint</h2>
-    <form action="/submit_contact_form" method="POST">
+    <form action="/submit_complaint_form" method="POST">
       <label for="fullname">Full Name</label>
       <input type="text" id="fullname" name="fullname" required>
   
       <label for="email">Email</label>
       <input type="text" id="email" name="email" required>
-new-complaint  
+ 
       <label for="subject">Subject</label>
       <input type="text" id="subject" name="subject" required>
   

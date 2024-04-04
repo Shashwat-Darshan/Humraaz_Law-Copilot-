@@ -148,25 +148,42 @@
     }
 
     function submitNewPoll() {
-      var pollName = document.getElementById('pollName').value;
-      var optionInputs = document.getElementsByClassName('optionInput');
+  var pollName = document.getElementById('pollName').value;
+  var optionInputs = document.getElementsByClassName('optionInput');
 
-      if (pollName.trim() === '') {
-        alert('Please enter a poll name.');
-        return;
-      }
+  if (pollName.trim() === '') {
+    alert('Please enter a poll name.');
+    return;
+  }
 
-      if (optionInputs.length < 2) {
-        alert('Please add at least two options to the poll.');
-        return;
-      }
+  if (optionInputs.length < 2) {
+    alert('Please add at least two options to the poll.');
+    return;
+  }
 
-      var pollOptions = Array.from(optionInputs).map(input => input.value);
+  var pollOptions = Array.from(optionInputs).map(input => input.value);
 
-      // Here you can handle the creation of the new poll
-      alert('Poll Name: ' + pollName + '\nPoll Options: ' + pollOptions.join(', '));
-      // Additional logic to save the poll to a database or perform other actions can be added here.
-    }
+  // Send data to Node.js server using AJAX
+  fetch('/create-poll', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      pollName: pollName,
+      pollOptions: pollOptions
+    })
+  })
+  .then(response => response.json())
+  .then(data => {
+    alert(data.message);  // Handle server response (optional)
+  })
+  .catch(error => {
+    console.error('Error sending poll data:', error);
+    alert('An error occurred while creating the poll.');
+  });
+}
+
   </script>
 
 </body>

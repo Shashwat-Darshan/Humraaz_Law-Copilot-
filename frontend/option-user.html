@@ -14,20 +14,21 @@
         font-size: 30px;
         letter-spacing: 1px;
         text-decoration: none;
-        color: #000000;
+        color: #725ac1;
         background: transparent;
         cursor: pointer;
         transition: ease-out 0.5s;
-        border: 2px solid #000000;
+        border: 2px solid #725ac1;
         border-radius: 10px;
-        box-shadow: inset 0 0 0 0 #000000;
+        box-shadow: inset 0 0 0 0 #725ac1;
         width: 550px;
         height: 330px;
+        font-family: 'Inter', sans-serif;
       }
 
       button:hover {
         color: white;
-        box-shadow: inset 0 -330px 0 0 #301063;
+        box-shadow: inset 0 -330px 0 0 #725ac1;
       }
 
       button:active {
@@ -40,7 +41,6 @@
       .line2{
         display: flex;
         justify-content: space-around;
-        
       }
       .line3{
         display: flex;
@@ -54,26 +54,24 @@
       }
       </script>
       <script
-option-user        src="https://www.chatbase.co/embed.min.js"
+        src="https://www.chatbase.co/embed.min.js"
         chatbotId="v-meGkzCfGPgsHHKaU-ff"
         domain="www.chatbase.co"
         defer>
-      </script>
+      </script>
   </head>
-  <body style=" background: linear-gradient(250.04deg, #29384d 50.42%, #8e00ff 87.93%);">
+  <body>
     <center>
-        < class="options">
+        <div class="options">
     <div class="line1">
-      <button onclick="window.location.href='new-complaint.html'">New <br>Complaint</button>
-      <a href="/complaint_history">
-        <button>Complaint Status</button>
-    </a>
-    
-    </div> 
-    <div class="line2"> 
-      <a href="/show_polls"><button>View <br>Polls</button> </a>
-      <button>Chats</button> </div>
-
+      <button onclick="window.location.href='new-complaint.html'">Create <br>Complaints</button>
+      <a href="/complaint_history"><button >Complaint Status</button></a>
+    </div>
+    <div class="line2">
+      <button onclick="window.location.href='solved-complaints.html'">View <br>Polls</button>
+      <a href="/chat-rooms"><button>Chatting Platform</button></a>
+    </div>
+    </div>
     </center>
   </body>
 </html>

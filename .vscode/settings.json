@@ -1,3 +1,4 @@
 {
-    "livePreview.defaultPreviewPath": "/frontend/login.html"
+    "livePreview.defaultPreviewPath": "/frontend/login.html",
+    "cmake.options.statusBarVisibility": "icon"
 }
