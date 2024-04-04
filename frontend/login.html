@@ -10,23 +10,24 @@
 <body style="background: linear-gradient(250.04deg, #29384d 50.42%, #8e00ff 87.93%);">
 <center>
 <div class="container">
-  <h2>Login</h2>
+  <h1>Login</h1>
 
  <div class="choices hide">
-  <button class="option hide" id="myButton" onclick="showEmailForm()">Login Now</button>
+  <button class="option hide" id="toggleButton" onclick="showEmailForm()">Login Now</button>
 </div>
   <div id="UserForm" style="display: none;" class="small_height">
-    <form class = "form size_medium" action="/login_submit" method="get" size ="100%">
+    <form class = "form size_medium" id="myForm" action="/login_submit" method="get" size ="100%">
             <p class="title small_height">Humraaj</p>  
-            <label>
+            
+              <label>
                 <input required="" placeholder="Phone no." type="number" name="phone" class="input small_height" style="font-size: 30px;">
             </label> 
-                <br>
                 <br>
             <label>
                 <input required="" placeholder="Password" type="password" name="password" class="input small_height" style="font-size: 30px; border-radius: 10px; border: 1px solid rgba(105, 105, 105, 0.397);">
 
             </label>
+            <br><br>
             <button class="submit">Submit</button>
         
     </form>
@@ -37,33 +38,40 @@
 </center>
 
 <script>
+  // Embedded JavaScript Code
+  let val = 1;
+  document.getElementById("valInput").value = val;
 
-    let val=1;
-    
-    function bu(){
-        val=0;
-    }
-    document.getElementById("valInput").value = val;
-
-    function showEmailForm() {
-    bu();
-    var button = document.getElementById("myButton");
-    button.style.display = "none";
-    document.getElementById("UserForm").style.display = "block";
-    return
-}
+  function showEmailForm() {
+    val = 0;
+    var button = document.getElementById("toggleButton");
+    button.style.transitionDelay = "0.5s";
+    button.style.opacity = 0; // Fade out the button
+    setTimeout(function() {
+      document.getElementById("UserForm").style.display = "block";
+      document.getElementById("UserForm").style.opacity = 1; // Fade in the form
+    }, 500); // Adjust the delay time as needed
+  }
 </script>
-
 
 </body>
 </html>
 <style>
+  h1 {
+    color: rgb(197, 201, 251); /* Blue color */
+ /* Remove default outline */
+    width:20%;
+
+}
+
 .size_medium{
       font-size: medium;
     }
 .form {
     display: flex;
     flex-direction: column;
+    justify-content: center; /* Center the child horizontally */
+    align-items: center;
     gap: 10px;
     max-width: 350px;
     background-color: #fff;
@@ -135,41 +143,32 @@
   }
   
   .form label .input {
-    width: 100%;
-    padding: 10px 10px 20px 10px;
+    width: 90%;
+    padding: 1px 1px ;
     outline: 0;
     border: 1px solid rgba(105, 105, 105, 0.397);
     border-radius: 10px;
+    text-align: center;
+    font-size: 20px;
   }
-  
-  .form label .input + span {
-    position: absolute;
-    left: 10px;
-    top: 15px;
-    color: grey;
-    font-size: 0.9em;
-    cursor: text;
-    transition: 0.3s ease;
-  }
+
   
   .form label .input:placeholder-shown + span {
     top: 15px;
     font-size: 0.9em;
+    
   }
-  
-  .form label .input:focus + span,.form label .input:valid + span {
-    top: 30px;
-    font-size: 0.7em;
-    font-weight: 600;
+
+
+  input::placeholder {
+    font-size: 23px; /* Decrease the size of the placeholder text */
+    /* Optional: Change the color of the placeholder text */
   }
-  
-  .form label .input:valid + span {
-    color: green;
-  }
-  
   .submit {
+
     border: none;
     outline: none;
+    width:50%;
     background-color: #301063;
     padding: 10px;
     border-radius: 10px;
@@ -235,9 +234,11 @@
     align-items: center;
     justify-content: center;
     justify-content: space-evenly;
+    text-align: center;
 }
 .small_height{
     height :50px;
+    
   }
 
 </style>

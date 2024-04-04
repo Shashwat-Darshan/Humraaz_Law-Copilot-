@@ -4,7 +4,7 @@ const app = express();
 const MongoClient = require('mongodb').MongoClient;
 app.use(express.urlencoded({ extended: true }));
 // Serve static files from the 'frontend' folder
-const uri = "mongodb+srv://shashwatdarshan153:1111@cluster0.xagjscq.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
+const uri = "mongodb+srv://shashwatdarshan153:12345@cluster0.8xhd5rb.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
 const All_user = client.db().collection('All_user');
 const reprentative = client.db().collection('representative');
@@ -12,7 +12,6 @@ const usersCollection = client.db().collection('users');
 const complaint = client.db().collection('complaints');
 const poll = client.db().collection('poll');
 // Connect to MongoDB
-app.use(express.static(path.join(__dirname, 'frontend')));
 async function connectToMongoDB() {
     try {
         await client.connect();
@@ -26,15 +25,20 @@ let user;
 // Call the function to connect to MongoDB
 connectToMongoDB();
 // Set the view engine to EJS
-app.set('view engine', 'ejs');
 
-// Serve static files from the 'frontend' folder
+app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, 'frontend'));
+
+// Serve static files from the 'frontend' directory
 app.use(express.static(path.join(__dirname, 'frontend')));
+
+
 let userData;
 // Define route to render index.ejs from frontend/
 app.get('/', (req, res) => {
     const dbName = client.db().databaseName;
     res.render(path.join(__dirname, 'frontend', 'index'));
+    
 });
 
 
@@ -44,6 +48,7 @@ app.get('/register', (req, res) => {
 
 
 app.post('/register_submit1', async (req, res) => {
+    console.log("entering user data","\n")
     try {
         const userData = {
             role: "req",
@@ -55,14 +60,14 @@ app.post('/register_submit1', async (req, res) => {
             phone: req.body.Phone,
             password: req.body.password
         };
-
-
-
+        console .log(userData ,"\n***************************************")
+        
+        
         const user = await All_user.insertOne(userData);
         const result = await reprentative.insertOne(userData);
         console.log(`User data stored successfully with ID: ${result.insertedId}`);
-
-        res.send('Form submitted and saved to database successfully!');
+        
+        res.render(path.join(__dirname, 'frontend', 'successfully-registered'));
     } catch (error) {
         console.error("Error storing user data:", error);
         res.status(500).send('Error saving to database');
@@ -71,6 +76,7 @@ app.post('/register_submit1', async (req, res) => {
 
 
 app.post('/register_submit2', async (req, res) => {
+    console.log("entering user data")
     try {
         const userData = {
             role: "user",
@@ -82,13 +88,13 @@ app.post('/register_submit2', async (req, res) => {
             password: req.body.password
         };
 
-
+        console .log(userData ,"\n***************************************\n")
         const result = await usersCollection.insertOne(userData);
 
         const user = await All_user.insertOne(userData);
         console.log(`User data stored successfully with ID: ${result.insertedId}`);
-        show(result.insertedId);
-        res.send('Form submitted and saved to database successfully!');
+        
+        res.render(path.join(__dirname, 'frontend', 'successfully-registered'));
     } catch (error) {
         console.error("Error storing user data:", error);
         res.status(500).send('Error saving to database');
@@ -103,8 +109,6 @@ app.get('/login_submit', async (req, res) => {
     try {
         // Retrieve all documents from the "All_user" collection
         const allUsers = await All_user.find({}).toArray();
-        console.log(allUsers);
-
         // Check if any users were found
         if (allUsers.length > 0) {
             // Iterate over the array of user documents to find the user with the given phone number and password
@@ -114,10 +118,10 @@ app.get('/login_submit', async (req, res) => {
             if (user) {
                 // User found, do something with the user data
                 console.log(user);
-                if(user.role=='req')
-                res.render(path.join(__dirname, 'frontend', 'option-user'));// Send the user data as a JSON response
+                if(user.role!='req')
+                res.sendFile(path.join(__dirname, 'frontend',  'option-user.html'));
                 else{
-                res.render(path.join(__dirname, 'frontend', 'option-representatives'));
+                res.sendFile(path.join(__dirname, 'frontend', "option-representatives.html"));
             }
             } else {
                 // User not found
@@ -133,6 +137,7 @@ app.get('/login_submit', async (req, res) => {
         console.error('Error retrieving all users:', error);
         res.status(500).send('Error retrieving all users');
     }
+    console .log("\n**********************************************************\n")
 });
 app.get('/community_chat', (req, res) => {
     res.sendFile(path.join(__dirname, 'path_to_your_community_chat_html_file'));
@@ -168,6 +173,7 @@ app.post('/submit_contact_form', async (req, res) => {
         console.error('Error processing form submission:', error);
         res.status(500).send('Error processing form submission');
     }
+    console .log("\n**********************************************************\n")
 });
 
 app.get('/jump_option',(req,res)=>{
@@ -186,6 +192,7 @@ app.get('/complaint_history', async (req, res) => {
         console.error('Error retrieving complaints:', error);
         res.status(500).send('Error retrieving complaints');
     }
+    console .log("\n**********************************************************\n")
 });
 
 app.get('/create_poll', (req, res) => {
@@ -213,18 +220,42 @@ app.post('/create_poll', async (req, res) => {
         console.error('Error saving poll:', error);
         res.status(500).send('Error creating poll.');
     }
+    console .log("\n**********************************************************\n")
 });
 
 app.get('/show_polls', async (req, res) => {
     try {
-        const complaints  = await poll.find().toArray();
-        res.render(path.join(__dirname, 'frontend', 'complaint-status'), { complaints  });
+        const complaints  =[
+            {
+              _id: "65e90b9cbc43322f85996cd8",
+              aim: "Best Solution for Water Scarcity",
+              option1: "Rainwater Harvesting",
+              option2: "Building Desalination Plants",
+              option3: "Water Conservation Campaigns"
+            },
+            {
+              _id: "65e90b9cbc43322f85996cd9",
+              aim: "Tackling Air Pollution",
+              option1: "Promoting Electric Vehicles",
+              option2: "Implementing Stricter Emission Standards",
+              option3: "Planting More Trees"
+            },
+            {
+              _id: "65e90b9cbc43322f85996cda",
+              aim: "Addressing Food Insecurity",
+              option1: "Supporting Sustainable Agriculture",
+              option2: "Expanding Food Aid Programs",
+              option3: "Investing in Urban Farming Initiatives"
+            }
+            // Add more poll objects as needed
+          ];
+          res.sendFile(path.join(__dirname, 'frontend\show_polls.html'));
     } catch (error) {
         console.error('Error retrieving polls:', error);
         res.status(500).send('Error retrieving polls.');
     }
+    console .log("\n**********************************************************\n")
 });
-
 // Start the server
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
