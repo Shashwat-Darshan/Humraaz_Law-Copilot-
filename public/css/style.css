@@ -177,7 +177,12 @@ a {
   margin-top: 20px;
   width: 100%;
 }
-
+.p-elem-1{
+ 
+display: flex;
+  align-items: center;
+  flex-direction: row;
+}
 @media (max-width: 700px) {
   .chat-main {
     display: block;
