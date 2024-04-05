@@ -290,6 +290,7 @@ body {
   left: 7rem;
   position: relative;
   flex-shrink: 0;
+  transform: translate(15.3%,40%);
 }
 .landing-page .footer .footer-heading {
   width: 68.9rem;
@@ -322,4 +323,11 @@ body {
   line-height: 1.5;
   color: #ffffff;
   font-family: Poppins, 'Source Sans Pro';
+}
+
+.pictures{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translate(-5%,30%);
 }
