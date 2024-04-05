@@ -166,7 +166,20 @@ app.get('/jump_option',(req,res)=>{
 })
 
 
+app.get('/poll-creation', (req, res) => {
+    res.sendFile(path.join(__dirname, 'frontend', 'create_polls.html'));
+});
 
+app.post('/poll-save', (req, res) => {
+    const pollData = req.body; // Access poll data from request body
+    console.log('Received poll data:', pollData);
+
+    // Process the poll data (save to database, etc.)
+    // You can replace this with your actual data saving logic
+
+    // Send response back to client
+    res.json({ message: 'Poll data received and processed successfully' });
+});
 
 app.post('/create-poll', async (req, res) => {
     
