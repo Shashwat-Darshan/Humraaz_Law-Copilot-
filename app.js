@@ -272,6 +272,38 @@ app.get('/complaint_history', async (req, res) => {
     }
     console.log("\n**********************************************************\n");
 });
+app.get('/complaint_history_all', async (req, res) => {
+    try {
+        // Retrieve complaints data from the database
+        const userComplaints = await complaint.find({}).toArray();
+        
+        // Filter complaints based on user number
+
+        // Render the EJS template with the filtered complaints data
+        res.render(path.join(__dirname, 'frontend', 'complaint-status'), { complaints: userComplaints });
+    } catch (error) {
+        console.error('Error retrieving complaints:', error);
+        res.status(500).send('Error retrieving complaints');
+    }
+    console.log("\n**********************************************************\n");
+});
+app.get('/complaint_history_solved', async (req, res) => {
+    try {
+        // Retrieve complaints data from the database
+        const complaints = await complaint.find({}).toArray();
+        
+        // Filter complaints based on user number
+        const userComplaints = complaints.filter(complaint => complaint.resolved != false);
+        console.log(complaints);
+
+        // Render the EJS template with the filtered complaints data
+        res.render(path.join(__dirname, 'frontend', 'complaint-status'), { complaints: userComplaints });
+    } catch (error) {
+        console.error('Error retrieving complaints:', error);
+        res.status(500).send('Error retrieving complaints');
+    }
+    console.log("\n**********************************************************\n");
+});
 
 
 
@@ -328,5 +360,5 @@ app.get('/create_poll', (req, res) => {
 // Start the server
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
-    console.log(`Server is running on port ${PORT}`);
+    console.log(`Server is running on port http://localhost:3000/`);
 });
