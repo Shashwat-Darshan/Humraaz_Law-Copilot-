@@ -1,77 +1,131 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Polls</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      background-color: #f0f0f0;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vote on Polls</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        h1 {
+            background-color: #301063;
+            color: white;
+            padding: 1rem;
+            margin: 0;
+        }
+        .poll-container {
+            margin: 20px auto;
+            width: 80%;
+            max-width: 600px;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+        h2 {
+            color: #301063;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+        }
+        .button-container {
+            margin-top: 10px;
+            text-align: center;
+        }
+        button {
+            background-color: #301063;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #8e00ff;
+        }
+        .percentage {
+            font-weight: bold;
+            color: #301063;
+        }
+    </style>
+    <script>
+        function getRandomPercentages(numOptions) {
+            let percentages = [];
+            let remaining = 100;
+            
+            for (let i = 0; i < numOptions - 1; i++) {
+                let percent = Math.floor(Math.random() * (remaining - (numOptions - i - 1))) + 1;
+                percentages.push(percent);
+                remaining -= percent;
+            }
+            percentages.push(remaining);
+            return percentages;
+        }
 
-    .poll-container {
-      background-color: #ffffff;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-      padding: 20px;
-      max-width: 600px;
-      width: 100%;
-    }
+        function showJaagranResults() {
+            const jaagranOptions = ["Kallu ke Plot mein", "Ram Baraat ghar mein", "Adhikaari ji ke khet mein", "Ansaari ji ka Marriage hall"];
+            const jaagranPercentages = getRandomPercentages(jaagranOptions.length);
+            
+            document.getElementById('jaagran-options').innerHTML = jaagranOptions.map((option, i) => `
+                <li>
+                    <label><input type="radio" name="jaagran_location" required> ${option}</label>
+                    <span class="percentage">${jaagranPercentages[i]}%</span>
+                </li>
+            `).join('');
+        }
 
-    .poll {
-      margin-bottom: 20px;
-    }
-
-    .poll-title {
-      font-size: 20px;
-      font-weight: bold;
-      margin-bottom: 10px;
-    }
-
-    .poll-options {
-      list-style: none;
-      padding: 0;
-    }
-
-    .poll-option {
-      margin-bottom: 10px;
-    }
-
-    .poll-option input[type="radio"] {
-      margin-right: 10px;
-    }
-  </style>
+        function showGateResults() {
+            const gateOptions = ["Haan", "Naa"];
+            const gatePercentages = getRandomPercentages(gateOptions.length);
+            
+            document.getElementById('gate-options').innerHTML = gateOptions.map((option, i) => `
+                <li>
+                    <label><input type="radio" name="gate_needed" required> ${option}</label>
+                    <span class="percentage">${gatePercentages[i]}%</span>
+                </li>
+            `).join('');
+        }
+    </script>
 </head>
 <body>
+    <h1>Vote on Polls</h1>
+    <div class="poll-container">
+        <!-- Jaagran Poll Section -->
+        <div class="poll">
+            <h2>Maata Raani ka Jaagran kahaan rakhna hai?</h2>
+            <ul id="jaagran-options">
+                <li><label><input type="radio" name="jaagran_location" value="Kallu ke Plot mein" required> Kallu ke Plot mein</label></li>
+                <li><label><input type="radio" name="jaagran_location" value="Ram Baraat ghar mein" required> Ram Baraat ghar mein</label></li>
+                <li><label><input type="radio" name="jaagran_location" value="Adhikaari ji ke khet mein" required> Adhikaari ji ke khet mein</label></li>
+                <li><label><input type="radio" name="jaagran_location" value="Ansaari ji ka Marriage hall" required> Ansaari ji ka Marriage hall</label></li>
+            </ul>
+            <div class="button-container">
+                <button type="button" onclick="showJaagranResults()">Submit Vote</button>
+            </div>
+        </div>
 
-  <div class="poll-container">
-    <% polls.forEach((poll, index) => { %>
-      <div class="poll">
-        <div class="poll-title">Poll <%= index + 1 %>: <%= poll.aim %></div>
-        <ul class="poll-options">
-          <li class="poll-option">
-            <input type="radio" id="option1_<%= index %>" name="option_<%= index %>" value="<%= poll.option1 %>">
-            <label for="option1_<%= index %>"><%= poll.option1 %></label>
-          </li>
-          <li class="poll-option">
-            <input type="radio" id="option2_<%= index %>" name="option_<%= index %>" value="<%= poll.option2 %>">
-            <label for="option2_<%= index %>"><%= poll.option2 %></label>
-          </li>
-          <li class="poll-option">
-            <input type="radio" id="option3_<%= index %>" name="option_<%= index %>" value="<%= poll.option3 %>">
-            <label for="option3_<%= index %>"><%= poll.option3 %></label>
-          </li>
-        </ul>
-      </div>
-    <% }); %>
-  </div>
-
+        <!-- Gate Poll Section -->
+        <div class="poll">
+            <h2>Humaari Gully mein gate ki zaroorat hai ya nahi?</h2>
+            <ul id="gate-options">
+                <li><label><input type="radio" name="gate_needed" value="Haan" required> Haan</label></li>
+                <li><label><input type="radio" name="gate_needed" value="Naa" required> Naa</label></li>
+            </ul>
+            <div class="button-container">
+                <button type="button" onclick="showGateResults()">Submit Vote</button>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
