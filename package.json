@@ -55,6 +55,7 @@
     "hasown": "^2.0.1",
     "http": "^0.0.1-security",
     "http-errors": "^2.0.0",
+    "humraaj": "file:",
     "iconv-lite": "^0.4.24",
     "ignore-by-default": "^1.0.1",
     "inherits": "^2.0.4",

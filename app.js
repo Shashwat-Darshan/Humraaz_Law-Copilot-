@@ -2,22 +2,22 @@ const express = require('express');
 const path = require('path');
 const { stringify } = require('querystring');
 const app = express();
-const MongoClient = require('mongodb').MongoClient;
 app.use(express.urlencoded({ extended: true }));
 const http = require('http');
 const server = http.createServer(app);
 const { Server } = require('socket.io');
 const io = new Server(server);
 const { formatMessage } = require('./utils/message');
-const {
-  joinUser,
-  getCurrentUser,
-  disconnectUser,
-  roomUsers,
-} = require('./utils/user');
-// Serve static files from the 'frontend' folder
+const MongoClient = require('mongodb').MongoClient;
 const uri = "mongodb+srv://shashwatdarshan153:12345@cluster0.8xhd5rb.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
+const {
+    joinUser,
+    getCurrentUser,
+    disconnectUser,
+    roomUsers,
+} = require('./utils/user');
+// Serve static files from the 'frontend' folder
 const All_user = client.db().collection('All_user');
 const reprentative = client.db().collection('representative');
 const usersCollection = client.db().collection('users');
