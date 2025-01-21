@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complaints and Status</title>
+    <style>
+        /* Global Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: #301063;
+            color: #fff;
+            text-align: center;
+            padding: 1.5rem 0;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 2rem;
+        }
+
+        /* Main Content Styles */
+        main {
+            padding: 2rem;
+        }
+
+        /* Complaint Section and Grid Layout */
+        .complaints {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .complaint {
+            background-color: #fff;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .complaint h2 {
+            font-size: 1.5rem;
+            color: #301063;
+            margin-bottom: 0.5rem;
+        }
+
+        .complaint p {
+            margin-top: 0.5rem;
+            font-size: 1rem;
+            color: #555;
+        }
+
+        /* Complaint Status Styles */
+        .status {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 1rem;
+            font-weight: bold;
+            font-size: 1rem;
+        }
+
+        .status p {
+            margin: 0;
+        }
+
+        .status .resolved {
+            color: green;
+        }
+
+        .status .in-progress {
+            color: orange;
+        }
+
+        /* Footer Styles */
+        footer {
+            background-color: #301063;
+            color: #fff;
+            text-align: center;
+            padding: 1rem 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            font-size: 1rem;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <h1>Complaints and Status</h1>
+    </header>
+
+    <!-- Main Content Section -->
+    <main>
+        <section class="complaints">
+            <article class="complaint">
+                <h2>Complaint Padosi se jhagda ho gaya</h2>
+                <p>Assigned By: Pyarelal Yadav</p>
+                <p>Description: Zameen ka vivaad ho gya padosi Shyam Yadav se.</p>
+                <div class="status">
+                    <p class="in-progress">Status: In Progress</p>
+                    <p>Resolution Due: 2024-11-05</p>
+                </div>
+            </article>
+            <article class="complaint">
+                <h2>Complaint #2: Awaara kutte</h2>
+                <p>Assigned By: Tulsi Das Khan</p>
+                <p>Description: Janaab bahot awaara kutte hai, humaare nawaase ki tashreef mein kaat liya.</p>
+                <div class="status">
+                    <p class="resolved">Status: Resolved</p>
+                    <p>Resolved On: 2024-10-20</p>
+                </div>
+            </article>
+            <article class="complaint">
+                <h2>Complaint #3: Road banwaani hai</h2>
+                <p>Assigned By: KK</p>
+                <p>Description: road bekar hai</p>
+                <div class="status">
+                    <p class="in-progress">Status: In Progress</p>
+                    <p>Resolution Due: 2024-11-10</p>
+                </div>
+            </article>
+        </section>
+    </main>
+
+    <!-- Footer Section -->
+    <footer>Humraaj KK Bhatt</p>
+    </footer>
+</body>
+</html>

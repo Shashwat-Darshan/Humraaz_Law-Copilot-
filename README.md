@@ -14,4 +14,4 @@ For setting up and running the application follow the below instructions:
 
 # ✴️ Disclaimer ✴️
 
-Humraaj is conceived during the "DCE Hackthon fest" as a project in its initial stages. At its present state, it is not intended for deployment in production environments or incorporation into any business models. Access has been restricted solely to the our team for evaluation purposes.
+Humraaj is conceived during the "Hack KRMU 3.0" Hackathon as a project in its initial stages. At its present state, it is not intended for deployment in production environments or incorporation into any business models. Access has been restricted solely to the Hack KRMU team for evaluation purposes.

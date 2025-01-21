@@ -13,7 +13,6 @@
     }
     .container {
       max-width: 500px;
-      height: 500px;
       margin: 50px auto;
       background-color: #fff;
       padding: 20px;
@@ -50,18 +49,25 @@
       background-color: #301063;
     }
   </style>
+  <script>
+    function handleSubmit(event) {
+      event.preventDefault(); // Prevent default form submission
+      // Redirect to the success page
+      window.location.href = 'successfully-submitted.html';
+    }
+  </script>
 </head>
 <body style="background: linear-gradient(250.04deg, #29384d 50.42%, #8e00ff 87.93%);">
 
   <div class="container">
     <h2>Submit a Complaint</h2>
-    <form action="/submit_complaint_form" method="POST">
+    <form id="complaintForm" onsubmit="handleSubmit(event)">
       <label for="fullname">Full Name</label>
       <input type="text" id="fullname" name="fullname" required>
   
       <label for="email">Email</label>
       <input type="text" id="email" name="email" required>
- 
+      
       <label for="subject">Subject</label>
       <input type="text" id="subject" name="subject" required>
   
@@ -69,8 +75,7 @@
       <textarea id="message" name="message" rows="5" required></textarea>
   
       <input type="submit" value="Submit">
-  </form>
-  
+    </form>
   </div>
 
 </body>

@@ -10,6 +10,7 @@
       background-color: #f4f4f4;
       margin: 0;
       padding: 0;
+      background: linear-gradient(250.04deg, #29384d 50.42%, #8e00ff 87.93%);
     }
     .container {
       max-width: 500px;
@@ -31,7 +32,7 @@
       margin-top: 20px;
     }
     .btn {
-      background-color: #4CAF50;
+      background-color: #301063;
       color: white;
       padding: 10px 20px;
       border: none;
@@ -41,9 +42,15 @@
       display: inline-block;
     }
     .btn:hover {
-      background-color: #45a049;
+      background-color: #301063;
     }
   </style>
+  <script>
+    // Redirect to option-user.html after 3 seconds
+    setTimeout(function() {
+      window.location.href = 'frontend/option-user.html';
+    }, 3000);
+  </script>
 </head>
 <body>
 
@@ -51,7 +58,7 @@
     <h2>Complaint Submitted Successfully</h2>
     <p>Your complaint has been successfully submitted. We will get back to you as soon as possible.</p>
     <div class="btn-container">
-      <a href="/jump_option" class="btn">Back to Main Menu</a>
+      <a href="option-user.html" class="btn">Back to Main Menu</a>
     </div>
   </div>
 
