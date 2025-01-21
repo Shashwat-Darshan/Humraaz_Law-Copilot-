@@ -1,11 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Registration Page</title>
-<link rel="stylesheet" href="register.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Humraaj</title>
+    <link rel="stylesheet" href="register.css">
+    <style>
+        .login-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background-color: #f5f5f5;
+        }
 
+        .form {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            width: 100%;
+            max-width: 400px;
+        }
+
+        .title {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            color: #333;
+        }
+
+        .input {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 1rem;
+            border: 1px solid rgba(105, 105, 105, 0.397);
+            border-radius: 10px;
+            font-size: 1.2rem;
+        }
+
+        .submit {
+            width: 100%;
+            padding: 12px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .submit:hover {
+            background-color: #45a049;
+        }
+
+        .register-link {
+            text-align: center;
+            margin-top: 1rem;
+        }
+
+        .register-link a {
+            color: #4CAF50;
+            text-decoration: none;
+        }
+
+        .register-link a:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
 <body style="background: linear-gradient(250.04deg, #29384d 50.42%, #8e00ff 87.93%);">
 <center>
@@ -16,22 +80,35 @@
   <button class="option hide" id="toggleButton" onclick="showEmailForm()">Login Now</button>
 </div>
   <div id="UserForm" style="display: none;" class="small_height">
-    <form class = "form size_medium" id="myForm" action="/login_submit" method="get" size ="100%">
-            <p class="title small_height">Humraaj</p>  
+    <div class="login-container">
+        <form class="form" action="/auth/login" method="POST">
+            <p class="title">Humraaj</p>
             
-              <label>
-                <input required="" placeholder="Phone no." type="number" name="phone" class="input small_height" style="font-size: 30px;">
-            </label> 
-                <br>
             <label>
-                <input required="" placeholder="Password" type="password" name="password" class="input small_height" style="font-size: 30px; border-radius: 10px; border: 1px solid rgba(105, 105, 105, 0.397);">
-
+                <input required 
+                       placeholder="Phone no." 
+                       type="tel" 
+                       name="phone" 
+                       class="input" 
+                       pattern="[0-9]{10}"
+                       title="Please enter a valid 10-digit phone number">
             </label>
-            <br><br>
-            <button class="submit">Submit</button>
-        
-    </form>
-    
+
+            <label>
+                <input required 
+                       placeholder="Password" 
+                       type="password" 
+                       name="password" 
+                       class="input">
+            </label>
+
+            <button type="submit" class="submit">Login</button>
+
+            <div class="register-link">
+                Don't have an account? <a href="/register">Register Now</a>
+            </div>
+        </form>
+    </div>
   </div>
 </div>
 </div>
@@ -54,6 +131,25 @@
   }
 </script>
 
+<script>
+        // Add client-side validation if needed
+        document.querySelector('form').addEventListener('submit', function(e) {
+            const phone = document.querySelector('input[name="phone"]').value;
+            const password = document.querySelector('input[name="password"]').value;
+
+            if (phone.length !== 10 || isNaN(phone)) {
+                e.preventDefault();
+                alert('Please enter a valid 10-digit phone number');
+                return;
+            }
+
+            if (password.length < 6) {
+                e.preventDefault();
+                alert('Password must be at least 6 characters long');
+                return;
+            }
+        });
+    </script>
 </body>
 </html>
 <style>
