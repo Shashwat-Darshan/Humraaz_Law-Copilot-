@@ -4,26 +4,41 @@ const app = express();
 const MongoClient = require('mongodb').MongoClient;
 app.use(express.urlencoded({ extended: true }));
 // Serve static files from the 'frontend' folder
-const uri = "mongodb+srv://shashwatdarshan153:1111@cluster0.xagjscq.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
+// import mongo_uri from .env
+require('dotenv').config();
+const uri = process.env.mongo_uri;
+console.log(uri);
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
-const All_user = client.db().collection('All_user');
-const reprentative = client.db().collection('representative');
-const usersCollection = client.db().collection('users');
-const complaint = client.db().collection('complaints');
-const poll = client.db().collection('poll');
+
+// Collections will be initialized after successful connection
+let All_user, reprentative, usersCollection, complaint, poll;
+
+All_user = client.db().collection('All_user');
+reprentative = client.db().collection('representative');
+usersCollection = client.db().collection('users');
+complaint = client.db().collection('complaints');
+poll = client.db().collection('poll');
 // Connect to MongoDB
 app.use(express.static(path.join(__dirname, 'frontend')));
 async function connectToMongoDB() {
     try {
         await client.connect();
         console.log("Connected to MongoDB successfully");
+        
+        // Initialize collections after successful connection
+        const db = client.db();
+        All_user = db.collection('All_user');
+        reprentative = db.collection('representative');
+        usersCollection = db.collection('users');
+        complaint = db.collection('complaints');
+        poll = db.collection('poll');
     } catch (error) {
-        console.error("Error connecting to MongoDB:", error);
+        console.error("MongoDB Connection Error:", error);
+        process.exit(1); // Exit if cannot connect to database
     }
 }
 
-let user;
-// Call the function to connect to MongoDB
+// Call connection function
 connectToMongoDB();
 // Set the view engine to EJS
 app.set('view engine', 'ejs');

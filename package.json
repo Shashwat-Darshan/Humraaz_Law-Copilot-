@@ -31,6 +31,7 @@
     "define-data-property": "^1.1.4",
     "depd": "^2.0.0",
     "destroy": "^1.2.0",
+    "dotenv": "^16.4.7",
     "ee-first": "^1.1.1",
     "ejs": "^3.1.9",
     "encodeurl": "^1.0.2",
@@ -55,6 +56,7 @@
     "hasown": "^2.0.1",
     "http": "^0.0.1-security",
     "http-errors": "^2.0.0",
+    "humraaj": "file:",
     "iconv-lite": "^0.4.24",
     "ignore-by-default": "^1.0.1",
     "inherits": "^2.0.4",
@@ -127,7 +129,7 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon app.js"
+    "start": "node app.js"
   },
   "author": "",
   "license": "ISC"
